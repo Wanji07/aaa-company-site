@@ -36,7 +36,7 @@ const ImageCarousel = () => {
 
 
     return (
-        <div className="flex flex-row overflow-hidden relative w-[70vh] h-[45vh]">
+        <div className="flex flex-row overflow-hidden relative w-[70vh] h-[65vh]">
             {images.map((image, index) => (
                 <img
                     src={image.url}
