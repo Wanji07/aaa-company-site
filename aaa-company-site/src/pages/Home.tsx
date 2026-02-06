@@ -1,22 +1,38 @@
 import { motion } from "framer-motion";
 import Carousel from "../Carousel";
-import BackgroundImage from '../assets/HeroBackground.jpg';
+import BackgroundImage from "../assets/HeroBackground.jpg";
+
 
 function Home() {
     return(
     <>
     <section id="container" className="relative">
-        <div id="backgroundContainer" className="absolute inset-0 w-full h-screen">
-            <img src={BackgroundImage} className="absolute inset-0 w-full h-full object-cover z-0" />
-            <div className="absolute inset-0 bg-black/50 z-10"></div>
+        <div id="backgroundContainer" className="absolute inset-0 z-0">
+            <img src={BackgroundImage} className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-black/50"></div>
         </div>
-        <div id="sectionContainer" className="relative z-20 grid grid-cols-2 place-items-center h-screen" style={{ marginLeft: "10vh" }}>
+        <div id="sectionContainer" className="relative z-10 grid grid-cols-2 place-items-center h-screen" style={{ marginLeft: "10vh" }}>
+            
+            <div id="textHeroSectionContainer" className="flex flex-col gap-6 p-2 align-">
             <motion.h1 
                 initial={{opacity: 0, y: 50, filter: "blur(15px)"}} 
                 animate={{opacity: 1, y: 0, filter: "blur(0px)"}} 
                 transition={{duration: 1, ease: "easeOut", delay: 0.3}}
-                className="text-white text-3xl font-bold">YOUR TRUSTED PARTNER IN OUTDOOR ADVERTISING
-            </motion.h1>         
+                className="text-white text-3xl font-bold">Trusted Advertising & Signage Solutions That <span className="font-extrabold">Make Your Brand Stand Out.</span>
+            </motion.h1>
+            <motion.p 
+                initial={{opacity: 0, y: 50, filter: "blur(15px)"}} 
+                animate={{opacity: 1, y: 0, filter: "blur(0px)"}} 
+                transition={{duration: 1, ease: "easeOut", delay: 1}}
+                className="text-white text-xl font-normal">From concept to completion, we provide professional design, printing, fabrication, and installation services for indoor and outdoor advertising.
+            </motion.p>
+            <motion.button
+                initial={{opacity: 0, y: 50, filter: "blur(15px)"}} 
+                animate={{opacity: 1, y: 0, filter: "blur(0px)"}} 
+                transition={{duration: 1, ease: "easeOut", delay: 2}}
+                className="max-w-[15em] min-h-[2em] inline-flex items-center justify-center gap-2 px-7 py-3 rounded-sm cursor-pointer bg-[#E61E25] text-white text-lg font-semibold shadow-lg shadow-black/20 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/30">GET STARTED
+            </motion.button> 
+            </div>
             <Carousel />
         </div>
     </section>

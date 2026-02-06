@@ -2,13 +2,13 @@ import HeaderLogo from '../assets/AAANavbarLogo.png';
 
 function Header() {
     return (
-    <header className="flex items-center justify-around max-h-20 p-8 bg-white shadow-sm">
-        <img src={HeaderLogo} className="max-w-[200px] p-5 h-auto" alt="AAA Navbar Logo" />
-        <ul id="navButtonContainer" className="flex flex-row gap-6 list-none">
-            <li className="m-0 p-0"><button className="cursor-pointer px-4 py-2 hover:bg-gray-100 rounded transition">Home</button></li>
-            <li className="m-0 p-0"><button className="cursor-pointer px-4 py-2 hover:bg-gray-100 rounded transition">About Us</button></li>
-            <li className="m-0 p-0"><button className="cursor-pointer px-4 py-2 hover:bg-gray-100 rounded transition">Our Services</button></li>
-            <li className="m-0 p-0"><button className="cursor-pointer px-4 py-2 hover:bg-gray-100 rounded transition">Contact Us</button></li>
+    <header className="absolute z-50 flex items-center justify-around min-h-25 w-screen" style={{padding: '25px'}}>
+        <img src={HeaderLogo} className="cursor-pointer max-w-[200px] p-2 h-auto" alt="AAA Navbar Logo" />
+        <ul id="navButtonContainer" className="z-20 flex flex-row items-center gap-12 list-none">
+            <li className="m-0 p-0"><button className="font-semibold cursor-pointer px-4 py-2 hover:text-[#E61E25] transition ease-in rounded text-white">Home</button></li>
+            <li className="m-0 p-0"><button className="font-semibold cursor-pointer px-4 py-2 hover:text-[#E61E25] transition ease-in rounded text-white">About Us</button></li>
+            <li className="m-0 p-0"><button className="font-semibold cursor-pointer px-4 py-2 hover:text-[#E61E25] transition ease-in rounded text-white">Our Services</button></li>
+            <li className="m-0 p-0 z-20"><button className="max-w-[15em] min-h-[2em] inline-flex items-center justify-center gap-2 rounded-md cursor-pointer bg-[#E61E25] text-white text-md font-semibold shadow-sm shadow-black/10 transition ease-in duration-200 hover:bg-white hover:text-[#E61E25]" style={{padding: '5px', paddingLeft: '10px', paddingRight: '10px'}}>Contact Us</button></li>
         </ul>
     </header>
     )
