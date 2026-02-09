@@ -4,6 +4,7 @@ import Home from './pages/Home.tsx';
 import Header from './pages/Header.tsx';
 import About from './pages/Featured.tsx';
 import Services from './pages/Services.tsx';
+import CallToAction from './pages/CallToAction.tsx';
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
           <Home />
           <About />
           <Services />
+          <CallToAction />
         </div>
       </>
     )

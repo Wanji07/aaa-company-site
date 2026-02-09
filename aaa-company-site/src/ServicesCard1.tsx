@@ -1,13 +1,16 @@
 import TiltedCard from './TiltedCard';
+import StructuralImage from './assets/Structural.jpg';
+import PrintingImage from './assets/Printing.png';
+import LayoutImage from './assets/Layout.jpg';
 
 function ServicesCard1() {
     return(
         <>
-            <div id="cardsContainer" className="mt-10 grid grid-cols-3 p-8 place-items-center">
+            <div id="cardsContainer" className="gap-8 mt-10 grid grid-cols-3 p-8 place-items-center">
             <TiltedCard
-                imageSrc="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
-                altText="Kendrick Lamar - GNX Album Cover"
-                captionText="We design and fabricate durable structures built to support high-impact outdoor and indoor advertising."
+                imageSrc={StructuralImage}
+                altText="Structural & Fabrication"
+                captionText="Structural & Fabrication"
                 containerHeight="300px"
                 containerWidth="300px"
                 imageHeight="300px"
@@ -24,9 +27,9 @@ function ServicesCard1() {
                 }
                 />
             <TiltedCard
-                imageSrc="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
-                altText="Kendrick Lamar - GNX Album Cover"
-                captionText="High-quality large-format printing and production services that bring your visuals to life with clarity and precision."
+                imageSrc={PrintingImage}
+                altText="Printing & Production"
+                captionText="Printing & Production"
                 containerHeight="300px"
                 containerWidth="300px"
                 imageHeight="300px"
@@ -43,9 +46,9 @@ function ServicesCard1() {
                 }
                 />
             <TiltedCard
-                imageSrc="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
-                altText="Kendrick Lamar - GNX Album Cover"
-                captionText="Creative layout and design solutions tailored to present your brand clearly, effectively, and professionally."
+                imageSrc={LayoutImage}
+                altText="Design & Layout"
+                captionText="Design & Layout"
                 containerHeight="300px"
                 containerWidth="300px"
                 imageHeight="300px"
