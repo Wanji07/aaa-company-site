@@ -3,6 +3,7 @@ import './App.css';
 import Home from './pages/Home.tsx';
 import Header from './pages/Header.tsx';
 import About from './pages/Featured.tsx';
+import Services from './pages/Services.tsx';
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
           <Header />
           <Home />
           <About />
+          <Services />
         </div>
       </>
     )
