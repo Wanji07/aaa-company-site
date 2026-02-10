@@ -1,75 +1,53 @@
-# React + TypeScript + Vite
+# AAA Advertising & Signage — Company Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript + Vite project for AAA Advertising & Signage’s marketing website. It includes responsive pages, a contact form powered by Web3Forms and hCaptcha, and Tailwind CSS styling.
 
-Currently, two official plugins are available:
+## Tech Stack
+- React 19 + TypeScript
+- Vite 7
+- Tailwind CSS 4
+- SweetAlert2 (user feedback)
+- Web3Forms + hCaptcha (contact form)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requirements
+- Node.js 18+ (recommended 20+)
+- npm 9+
 
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
+```bash
+npm install
+npm run dev
 ```
+The dev server starts locally and supports hot reload.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Available Scripts
+- `dev`: Start Vite dev server
+- `build`: Type-check then build production assets to `dist/`
+- `preview`: Preview the production build locally
+- `lint`: Run ESLint on the project
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Project Structure
+- Pages: see [src/pages](src/pages)
+  - Contact form: [src/pages/Contact.tsx](src/pages/Contact.tsx)
+  - Footer: [src/pages/Footer.tsx](src/pages/Footer.tsx)
+  - Home/Featured/Services: under [src/pages](src/pages)
+- Entry: [src/main.tsx](src/main.tsx), [index.html](index.html)
+- Config: [vite.config.ts](vite.config.ts), [tailwind.config.js](tailwind.config.js)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Contact Form Keys
+The contact form posts to Web3Forms and uses hCaptcha:
+- Web3Forms `access_key` is currently set in code within [src/pages/Contact.tsx](src/pages/Contact.tsx).
+- hCaptcha `sitekey` is set in [src/pages/Contact.tsx](src/pages/Contact.tsx).
+
+For production, consider moving these to environment variables and loading them at runtime.
+
+## Build & Deploy
+```bash
+npm run build
+npm run preview
 ```
+Deploy the `dist/` folder to any static hosting (Netlify, Vercel, Cloudflare Pages, S3, etc.).
+
+## Troubleshooting
+- Contact form fails: verify network access and keys; on failure, a descriptive error alert is shown.
+- Styling issues: ensure Tailwind CSS is installed and processed via PostCSS.
