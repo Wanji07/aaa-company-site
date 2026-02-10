@@ -6,6 +6,7 @@ import About from './pages/Featured.tsx';
 import Services from './pages/Services.tsx';
 import CallToAction from './pages/CallToAction.tsx';
 import Contact from './pages/Contact.tsx';
+import Footer from './pages/Footer.tsx';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
           <Services />
           <CallToAction />
           <Contact />
+          <Footer />
         </div>
       </>
     )

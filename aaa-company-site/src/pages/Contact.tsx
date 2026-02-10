@@ -2,9 +2,12 @@ import Background from '../assets/ContactBackground.jpg'
 import ContactImage from '../assets/ContactImage.jpg';
 import { useState } from 'react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 function Contact() {
     const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+    const MySwal = withReactContent(Swal)
 
     const onHCaptchaChange = (token: string) => {
         setCaptchaToken(token);
@@ -26,9 +29,27 @@ function Contact() {
 
         const data = await response.json();
         if (data.success) {
+            MySwal.fire({
+            title: <p>Successfully submitted the message!</p>,
+            icon: "success"
+        })
             form.reset();
         } else {
             console.error("Form submission failed:", data);
+                MySwal.fire({
+                    icon: 'error',
+                    title: <p>Submission failed</p>,
+                    html: (
+                        <div style={{ textAlign: 'left' }}>
+                            <p>Sorry, we couldn't send your message.</p>
+                            {data?.message ? (
+                                <p><strong>Reason:</strong> {data.message}</p>
+                            ) : null}
+                            <p>Please try again in a moment or contact us at <a href="tel:09946549679">0994-654-9679</a>.</p>
+                        </div>
+                    ),
+                    confirmButtonText: 'OK',
+                })
         }
     };
 
@@ -43,7 +64,7 @@ function Contact() {
                         className="absolute inset-0 w-full h-full object-cover opacity-15"
                     />
                 </div>
-                <div id="contentContainer" className="relative mt-[5em] z-100 grid grid-cols-2 items-stretch gap-8 max-w-6xl mx-auto px-15">
+                <div id="contentContainer" className="relative my-[5em] z-100 grid grid-cols-2 items-stretch gap-8 max-w-6xl mx-auto px-15">
                     <div id="leftSection">
                         <div id="form" className="relative bg-white/85 backdrop-blur-sm p-8 pb-24 rounded-xl shadow-lg max-w-2xl">
                             <h1 className="font-semibold text-[#E61E25] text-3xl">Get in Touch</h1>
