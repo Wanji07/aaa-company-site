@@ -6,7 +6,7 @@ function Footer() {
     <>
       <footer
         id="footerContainer"
-        className="border-t-4 border-[#E61E25] bg-neutral-900 text-white"
+        className="relative z-500 border-t-4 border-[#E61E25] bg-neutral-900 text-white"
         aria-label="Site footer"
         style={{ boxShadow: '0 -8px 16px -12px rgba(0, 0, 0, 0.35)' }}
       >

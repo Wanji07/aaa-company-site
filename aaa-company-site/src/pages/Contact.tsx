@@ -56,7 +56,7 @@ function Contact() {
 
     return (
         <>
-            <div id="container" className="relative overflow-hidden bg-[#E61E25] text-white h-screen">
+            <div id="container" className="relative overflow-hidden bg-[#E61E25] text-white min-h-screen">
                 <div className="absolute inset-0 z-0">
                     <img
                         src={Background}
@@ -64,10 +64,10 @@ function Contact() {
                         className="absolute inset-0 w-full h-full object-cover opacity-15"
                     />
                 </div>
-                <div id="contentContainer" className="relative my-[5em] z-100 grid grid-cols-2 items-stretch gap-8 max-w-6xl mx-auto px-15">
+                <div id="contentContainer" className="relative z-100 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-20 flex flex-col lg:grid lg:grid-cols-2 items-stretch gap-8">
                     <div id="leftSection">
-                        <div id="form" className="relative bg-white/85 backdrop-blur-sm p-8 pb-24 rounded-xl shadow-lg max-w-2xl">
-                            <h1 className="font-semibold text-[#E61E25] text-3xl">Get in Touch</h1>
+                        <div id="form" className="relative w-full bg-white/85 backdrop-blur-sm p-6 sm:p-8 pb-24 sm:pb-28 rounded-xl shadow-lg max-w-2xl">
+                            <h1 className="font-semibold text-[#E61E25] text-2xl sm:text-3xl">Get in Touch</h1>
                             <p className="mt-2 text-sm text-gray-600">We’ll get back to you within three business days.</p>
                             <form className="mt-6 space-y-6" onSubmit={onSubmit}>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -130,7 +130,7 @@ function Contact() {
                                         />
                                     </div>
                                 </div>
-                                <div className="flex items-center justify-between">
+                                <div className="flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
                                     <span className="text-sm text-gray-600">Prefer a call? 0994-654-9679</span>
                                     <button
                                         type="submit"
@@ -149,8 +149,8 @@ function Contact() {
                             </div>
                         </div>
                     </div>
-                    <div id="rightSection">
-                        <img src={ContactImage} className="rounded-2xl h-full w-auto max-w-[100%] object-cover shadow-2xl ring-1 ring-black/10 hover:scale-[1.02] hover:shadow-3xl transition-transform duration-300 ease-out w-full max-w-[520px] sm:max-w-[600px] md:max-w-[680px] lg:max-w-[520px] aspect-[4/3]" />
+                    <div id="rightSection" className="hidden lg:block">
+                        <img src={ContactImage} alt="Contact" className="rounded-2xl h-full w-auto max-w-[100%] object-cover shadow-2xl ring-1 ring-black/10 hover:scale-[1.02] hover:shadow-3xl transition-transform duration-300 ease-out w-full max-w-[520px] sm:max-w-[600px] md:max-w-[680px] lg:max-w-[520px] aspect-[4/3]" />
                     </div>
                 </div>
             </div>

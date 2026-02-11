@@ -7,6 +7,7 @@ import BackBtn from '../assets/ArrowBackServices.png';
 
 import ServicesCard1 from '../ServicesCard1';
 import ServicesCard2 from '../ServicesCard2';
+import MobileServicesCard from '../MobileServicesCard';
 
 function Services() {
 
@@ -52,7 +53,7 @@ function Services() {
                     OUR SERVICES
                 </motion.h1>
                 <div id="cardsContainer" className="flex flex-row gap-12 justify-center items-center gap-7 z-30">
-                    <button onClick={handleBack} className="cursor-pointer p-1 rounded-full bg-white/80 shadow-xl hover:bg-white z-500">
+                    <button onClick={handleBack} className="hidden lg:block cursor-pointer p-1 rounded-full bg-white/80 shadow-xl hover:bg-white z-500">
                         <img src={BackBtn} className="w-8 h-8" />
                     </button>
                     <AnimatePresence mode="wait" custom={direction}>
@@ -69,7 +70,7 @@ function Services() {
                         {currentPage === 0 ? <ServicesCard1 /> : <ServicesCard2 />}
                     </motion.div>
                     </AnimatePresence>
-                    <button onClick={handleNext} className="cursor-pointer p-1 rounded-full bg-white/80 shadow-xl hover:bg-white z-500">
+                    <button onClick={handleNext} className="hidden lg:block cursor-pointer p-1 rounded-full bg-white/80 shadow-xl hover:bg-white z-500">
                         <img src={NextBtn} className="w-8 h-8" />
                     </button>
                 </div>

@@ -9,7 +9,7 @@ function CallToAction() {
                 <div className="absolute inset-0 bg-black/50"></div>
             </div>
                 <div id="contentContainer" className="relative gap-6 z-10 flex flex-col items-center justify-center text-center">
-                    <h1 className="text-white text-2xl font-bold flex "><a href="https://www.facebook.com/aaaoutdooradss">See our latest projects and message us directly.</a></h1>
+                    <h1 className="text-white text-2xl font-bold flex"><a href="https://www.facebook.com/aaaoutdooradss">See our latest projects and message us directly.</a></h1>
                     <a
                         href="https://www.facebook.com/aaaoutdooradss"
                         target="_blank"
