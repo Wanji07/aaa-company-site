@@ -4,6 +4,17 @@ import BackgroundImage from "../assets/HeroBackground.jpg";
 
 
 function Home() {
+
+    const scrollToSection = (id: string) => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.scrollIntoView({
+                behavior: 'smooth', block: 'start'
+            });
+        }
+    }
+
+
     return(
     <>
     <section id="home" className="relative scroll-mt-28">
@@ -26,6 +37,7 @@ function Home() {
                 className="text-center text-white md:text-lg lg:text-xl font-normal">From concept to completion, we provide professional design, printing, fabrication, and installation services for indoor and outdoor advertising.
             </motion.p>
             <motion.button
+                onClick={() => { scrollToSection('contact'); }}
                 initial={{opacity: 0, y: 50, filter: "blur(15px)"}} 
                 animate={{opacity: 1, y: 0, filter: "blur(0px)"}} 
                 transition={{duration: 1, ease: "easeOut", delay: 2}}
