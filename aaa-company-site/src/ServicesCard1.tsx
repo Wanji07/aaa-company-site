@@ -6,7 +6,7 @@ import LayoutImage from './assets/Layout.jpg';
 function ServicesCard1() {
     return(
         <>
-            <div id="cardsContainer" className="gap-20 mt-10 grid md:grid-cols-2 lg:grid-cols-3 p-8 place-items-center">
+            <div id="cardsContainer" className="gap-8 mt-10 grid md:grid-cols-2 lg:grid-cols-3 p-8 place-items-center">
             <TiltedCard
                 imageSrc={StructuralImage}
                 altText="Structural & Fabrication"

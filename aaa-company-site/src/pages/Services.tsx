@@ -7,7 +7,6 @@ import BackBtn from '../assets/ArrowBackServices.png';
 
 import ServicesCard1 from '../ServicesCard1';
 import ServicesCard2 from '../ServicesCard2';
-import MobileServicesCard from '../MobileServicesCard';
 
 function Services() {
 
@@ -36,7 +35,7 @@ function Services() {
 
     return (
         <>
-            <div id="container" className="relative h-[max-content] pb-15">
+            <div id="services" className="relative h-[max-content] pb-15">
                 <hr className="absolute left-1/2 -translate-x-1/2 rounded-full border-0 w-16 h-1.5 bg-[#E61E25]" />
                 <div className="absolute inset-0 z-0">
                     <img

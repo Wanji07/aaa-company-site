@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import HeaderLogo from '../assets/AAANavbarLogo.png';
 import './Header.css'
 
 function Header() {
+
     const [open, setOpen] = useState(false)
     const toggle = () => setOpen((v) => !v)
     const close = () => setOpen(false)
@@ -17,14 +18,14 @@ function Header() {
     return (
         <header
             id="headerContainer"
-            className="fixed top-0 left-0 right-0 z-[1000] inset-x-0 flex items-center justify-between min-h-25 w-screen bg-black/20 backdrop-blur-md"
-            style={{ padding: '18px 25px' }}
+            className={`fixed top-0 left-0 right-0 z-[1000] inset-x-0 flex items-center justify-between min-h-25 w-screen ${navSize ? 'bg-white shadow-md' : 'bg-black/20 backdrop-blur-md'} transition-colors duration-200`}
+            style={{ padding: navSize ? '10px 20px' : '18px 25px' }}
         >
-            <img onClick={() => { scrollToSection('home'); close() }} src={HeaderLogo} className="cursor-pointer max-w-[180px] p-1 h-auto" alt="AAA Navbar Logo" />
+            <img onClick={() => { scrollToSection('home'); close() }} src={HeaderLogo} className={`cursor-pointer ${navSize ? 'max-w-[160px]' : 'max-w-[180px]'} p-1 h-auto transition-all duration-200`} alt="AAA Navbar Logo" />
             <ul id="navButtonContainer" className="hidden lg:flex z-20 flex-row items-center gap-12 list-none">
-                <li className="m-0 p-0"><button onClick={() => scrollToSection('home')} className="font-semibold cursor-pointer px-4 py-2 hover:text-[#E61E25] transition ease-in rounded text-white">Home</button></li>
-                <li className="m-0 p-0"><button onClick={() => scrollToSection('about')} className="font-semibold cursor-pointer px-4 py-2 hover:text-[#E61E25] transition ease-in rounded text-white">About Us</button></li>
-                <li className="m-0 p-0"><button onClick={() => scrollToSection('services')} className="font-semibold cursor-pointer px-4 py-2 hover:text-[#E61E25] transition ease-in rounded text-white">Our Services</button></li>
+                <li className="m-0 p-0"><button onClick={() => scrollToSection('home')} className={`font-semibold cursor-pointer px-4 py-2 transition ease-in rounded ${navSize ? 'text-black hover:text-[#E61E25]' : 'text-white hover:text-[#E61E25]'}`}>Home</button></li>
+                <li className="m-0 p-0"><button onClick={() => scrollToSection('about')} className={`font-semibold cursor-pointer px-4 py-2 transition ease-in rounded ${navSize ? 'text-black hover:text-[#E61E25]' : 'text-white hover:text-[#E61E25]'}`}>About Us</button></li>
+                <li className="m-0 p-0"><button onClick={() => scrollToSection('services')} className={`font-semibold cursor-pointer px-4 py-2 transition ease-in rounded ${navSize ? 'text-black hover:text-[#E61E25]' : 'text-white hover:text-[#E61E25]'}`}>Our Services</button></li>
                 <li className="m-0 p-0 z-20"><button onClick={() => scrollToSection('contact')} className="max-w-[15em] min-h-[2em] inline-flex items-center justify-center gap-2 rounded-md cursor-pointer bg-[#E61E25] text-white text-md font-semibold shadow-sm shadow-black/10 transition ease-in duration-200 hover:bg-white hover:text-[#E61E25]" style={{padding: '5px', paddingLeft: '10px', paddingRight: '10px'}}>Contact Us</button></li>
             </ul>
 

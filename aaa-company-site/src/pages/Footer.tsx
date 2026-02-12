@@ -1,7 +1,6 @@
 import FooterLogo from '../assets/AAANavbarLogo.png';
 import FacebookLogo from '../assets/facebookLogo.png';
 
-import { useState } from 'react'
 
 function Footer() {
 

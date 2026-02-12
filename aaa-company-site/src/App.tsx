@@ -4,8 +4,6 @@ import Home from './pages/Home.tsx';
 import Header from './pages/Header.tsx';
 import About from './pages/Featured.tsx';
 import ServicesMobile from './MobileServicesCard.tsx';
-import ServicesCard1 from './ServicesCard1.tsx';
-import ServicesCard2 from './ServicesCard2.tsx';
 import CallToAction from './pages/CallToAction.tsx';
 import Contact from './pages/Contact.tsx';
 import Footer from './pages/Footer.tsx';
