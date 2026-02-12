@@ -5,8 +5,20 @@ import './Header.css'
 function Header() {
 
     const [open, setOpen] = useState(false)
+    const [navSize, setNavSize] = useState(false)
     const toggle = () => setOpen((v) => !v)
     const close = () => setOpen(false)
+
+    useEffect(() => {
+        const onScroll = () => {
+            setNavSize(window.scrollY > 10)
+        }
+        onScroll()
+        window.addEventListener('scroll', onScroll)
+        return () => {
+            window.removeEventListener('scroll', onScroll)
+        }
+    }, [])
 
     const scrollToSection = (id: string) => {
         const el = document.getElementById(id)
