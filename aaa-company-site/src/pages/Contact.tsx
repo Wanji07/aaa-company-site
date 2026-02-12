@@ -56,7 +56,7 @@ function Contact() {
 
     return (
         <>
-            <div id="container" className="relative overflow-hidden bg-[#E61E25] text-white min-h-screen">
+            <div id="contact" className="relative overflow-hidden bg-[#E61E25] text-white min-h-screen">
                 <div className="absolute inset-0 z-0">
                     <img
                         src={Background}

@@ -5,7 +5,7 @@ import AboutBackground from '../assets/AboutBackground.png'
 function Featured() {
     return(
         <>
-            <div id="container" className="overflow-hidden p-8 relative z-60 bg-white w-full min-h-[65vh] overflow-hidden">
+            <div id="about" className="overflow-hidden p-8 relative z-60 bg-white w-full min-h-[65vh] overflow-hidden scroll-mt-28">
                 <div className="absolute inset-0 z-0">
                     <img src={AboutBackground} className="absolute inset-0 w-full h-full object-cover opacity-10" />
                 </div>

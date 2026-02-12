@@ -3,7 +3,7 @@ import BackgroundImage from '../assets/CTABackground.jpg'
 function CallToAction() {
     return(
         <>
-            <div id="container" className="relative min-h-[max-content] p-8 flex items-center justify-center">
+            <div id="cta" className="relative min-h-[max-content] p-8 flex items-center justify-center scroll-mt-28">
                 <div id="backgroundContainer" className="absolute inset-0 z-0">
                     <img src={BackgroundImage} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/50"></div>

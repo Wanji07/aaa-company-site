@@ -1,0 +1,17 @@
+.show {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    min-height: 100px;
+    width: 100%;
+    background-color: black;
+
+}

@@ -6,7 +6,7 @@ import BackgroundImage from "../assets/HeroBackground.jpg";
 function Home() {
     return(
     <>
-    <section id="container" className="relative">
+    <section id="home" className="relative scroll-mt-28">
         <div id="backgroundContainer" className="absolute inset-0 z-0">
             <img src={BackgroundImage} className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-black/50"></div>

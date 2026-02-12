@@ -14,7 +14,7 @@ import 'swiper/css';
 function MobileServicesCard() {
     return(
         <>
-        <div id="container">
+        <div id="services" className="scroll-mt-28">
                 <hr className="absolute left-1/2 -translate-x-1/2 rounded-full border-0 w-16 h-1.5 bg-[#E61E25]" />
                 <div className="absolute inset-0 z-0">
                     <img
