@@ -18,4 +18,5 @@ body {
   overflow-y: auto;
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }

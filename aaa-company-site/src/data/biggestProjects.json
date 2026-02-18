@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "project": "TheLook Asia",
+        "location": "Cebu, Mandaue, Lapu-lapu",
+        "type": ["Lamp Post Banner"],
+        "units": "536 Pcs"
+    },
+    {
+        "id": 2,
+        "project": "Tourism Infrastructure & Enterprise Zone Authority",
+        "location": "Cebu, Mandaue, Lapu-lapu",
+        "type": ["Billboard Rental"],
+        "units": "4 Pcs"
+    },
+    {
+        "id": 3,
+        "project": "CW Home Depot",
+        "location": "Taytay Rizal, Mexico Pampanga, San Fernando Pampanga, Sta. Rosa Laguna, Blintawak, Commonwealth",
+        "type": ["Build-up Letters", "Wall Billboard", "Pylon Post", "Lamp post Banners"],
+        "units": "Lamp post Banner units: 40pcs"
+    }
+    
+]
