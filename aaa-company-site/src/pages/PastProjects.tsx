@@ -1,7 +1,7 @@
-import projectData from '../data/biggestProjects.json'
-import placeholder1 from '../assets/biggestProjects/HOME.jfif'
-import placeholder2 from '../assets/ServicesBackground.jpg'
-import placeholder3 from '../assets/Carousel3.jpg'
+import projectData from '../data/pastProjects.json'
+import CentroImage from '../assets/pastProjects/Centro.jfif'
+import NorthImage from '../assets/pastProjects/North.jfif'
+
 
 type ProjectItem = {
     id: number
@@ -12,12 +12,11 @@ type ProjectItem = {
 }
 
 const projectImages: Record<number, string> = {
-    1: placeholder3,
-    2: placeholder2,
-    3: placeholder1,
+    1: NorthImage,
+    2: CentroImage
 }
 
-function BiggestProjects() {
+function PastProjects() {
     const projects = projectData as ProjectItem[]
     return(
                 <div className="max-w-5xl place-items-center justify-center mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 py-8">
@@ -25,7 +24,7 @@ function BiggestProjects() {
                         <div key={data.id} className="group relative w-full h-full bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden ring-1 ring-black/10 hover:ring-[#E61E25]/40">
                             <div className="relative overflow-hidden">
                                 <img
-                                    src={projectImages[data.id] ?? placeholder1}
+                                    src={projectImages[data.id]}
                                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                                     alt={data.project}
                                 />
@@ -52,4 +51,4 @@ function BiggestProjects() {
     )
 }
 
-export default BiggestProjects
+export default PastProjects

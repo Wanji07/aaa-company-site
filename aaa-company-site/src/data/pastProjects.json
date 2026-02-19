@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "project": "Northlink Project",
+        "location": "Malolos Bulacan link to San Leonardo Nueva Ecija",
+        "type": ["Telecommunications"]
+    },
+    {
+        "id": 2,
+        "project": "Centro Mall Project",
+        "location": "Cabuyao City, Laguna",
+        "type": ["Pylon Post"]
+    }
+]

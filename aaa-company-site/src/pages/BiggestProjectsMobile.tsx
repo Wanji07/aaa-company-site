@@ -3,6 +3,11 @@ import placeholder1 from '../assets/biggestProjects/HOME.jfif'
 import placeholder2 from '../assets/ServicesBackground.jpg'
 import placeholder3 from '../assets/Carousel3.jpg'
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
+
 type ProjectItem = {
     id: number
     project: string
@@ -18,14 +23,22 @@ const projectImages: Record<number, string> = {
 }
 
 function BiggestProjects() {
-    const projects = projectData as ProjectItem[]
-    return(
-                <div className="max-w-5xl place-items-center justify-center mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 py-8">
-                    {projects.map((data) => (
-                        <div key={data.id} className="group relative w-full h-full bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden ring-1 ring-black/10 hover:ring-[#E61E25]/40">
+    const projects = projectData as ProjectItem[];
+    return (
+        <div className="max-w-md mx-auto px-2 py-6">
+            <Swiper
+                modules={[Pagination]}
+                spaceBetween={24}
+                slidesPerView={1}
+                pagination={{ clickable: true }}
+                className="w-full"
+            >
+                {projects.map((data) => (
+                    <SwiperSlide key={data.id}>
+                        <div className="group relative w-full h-full bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden ring-1 ring-black/10 hover:ring-[#E61E25]/40">
                             <div className="relative overflow-hidden">
                                 <img
-                                    src={projectImages[data.id] ?? placeholder1}
+                                    src={projectImages[data.id]}
                                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                                     alt={data.project}
                                 />
@@ -47,9 +60,11 @@ function BiggestProjects() {
                                 </h3>
                             </div>
                         </div>
-                    ))}
-                </div>
-    )
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
+    );
 }
 
 export default BiggestProjects

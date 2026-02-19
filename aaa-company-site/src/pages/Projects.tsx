@@ -2,29 +2,69 @@ import Header from './NavbarProjects'
 import Footer from './Footer'
 import BackgroundImage from '../assets/ProjectsBackground.jpg'
 import BiggestProjects from '../pages/BiggestProjects'
+import BiggestProjectsMobile from '../pages/BiggestProjectsMobile'
 import OngoingProjects from '../pages/OngoingProjects'
+import OngoingProjectsMobile from '../pages/OngoingProjectsMobile'
+import PastProjects from '../pages/PastProjects'
+import PastProjectsMobile from '../pages/PastProjectsMobile'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-
 
 
 
 function Projects() {
 
     const [currentPage, setCurrentPage] = useState(1);
+    const [screenSize, setScreenSize] = useState(false);
+
+    const checkScreen = () => {
+        setScreenSize(window.innerWidth < 1080);
+    }
+
+    useEffect(() => {
+        checkScreen();
+        window.addEventListener('resize', checkScreen);
+
+        return () => {
+            window.removeEventListener('resize', checkScreen);
+        };
+
+    }, []);
 
     const checkPage = () => {
         if (currentPage == 1) {
             return(
-                <BiggestProjects />
-            ) 
+                <motion.div 
+                initial={{opacity: 0, y: 50, filter: "blur(15px)"}} 
+                animate={{opacity: 1, y: 0, filter: "blur(0px)"}} 
+                transition={{duration: 1, ease: "easeOut", delay: 0.5}}
+                >
+                {screenSize ? <BiggestProjectsMobile /> : <BiggestProjects />}
+               </motion.div>
+            )
         } else if (currentPage == 2) {
             return(
-                <div className="lg:pl-[50vh]">
-                    <OngoingProjects />
-                </div>
+                <motion.div 
+                initial={{opacity: 0, y: 50, filter: "blur(15px)"}} 
+                animate={{opacity: 1, y: 0, filter: "blur(0px)"}} 
+                transition={{duration: 1, ease: "easeOut", delay: 0.5}}
+                className="lg:pl-[50vh]"
+                >
+                {screenSize ? <OngoingProjectsMobile /> : <OngoingProjects />}
+               </motion.div>
             )
-        };
+        } else {
+            return(
+                <motion.div 
+                initial={{opacity: 0, y: 50, filter: "blur(15px)"}} 
+                animate={{opacity: 1, y: 0, filter: "blur(0px)"}} 
+                transition={{duration: 1, ease: "easeOut", delay: 0.5}}
+                className="lg:pl-[50vh]"
+                >
+                {screenSize ? <PastProjectsMobile /> : <PastProjects />}
+               </motion.div>
+            )
+        }
 
     }
 

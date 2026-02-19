@@ -24,14 +24,24 @@ function Featured() {
                         transition={{duration: 1, ease: "easeOut", delay: 0.3}}
                         className="text-center md:text-justify text-black text-md md:text-xl font-normal">We are a trusted advertising and signage solutions provider committed to helping brands stand out and communicate effectively. With years of experience in design, printing, fabrication, and installation, we deliver high-quality advertising materials that make a lasting impact.
                     </motion.h1>
+                    <div className="flex flex-row gap-6 justify-center items-center">
                     <Link to="/projects">
                     <motion.button
-                        initial={{opacity: 0, y: 50, filter: "blur(15px)"}} 
-                        animate={{opacity: 1, y: 0, filter: "blur(0px)"}} 
-                        transition={{duration: 1, ease: "easeOut", delay: 0.3}}
+                        initial={{opacity: 0, filter: "blur(15px)"}} 
+                        animate={{opacity: 1, filter: "blur(0px)"}} 
+                        transition={{duration: 1, ease: "easeOut", delay: 2}}
                         className="max-w-[15em] min-h-[2em] inline-flex items-center justify-center gap-2 px-7 py-3 rounded-sm cursor-pointer bg-[#E61E25] text-white text-lg font-semibold shadow-lg shadow-black/20 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/30"><a href="https://web.facebook.com/aaaoutdooradss" className="text-white">VIEW PROJECTS</a>
                     </motion.button> 
                         </Link>
+                      <Link to="/about">
+                    <motion.button
+                        initial={{opacity: 0, filter: "blur(15px)"}} 
+                        animate={{opacity: 1, filter: "blur(0px)"}} 
+                        transition={{duration: 1, ease: "easeOut", delay: 2}}
+                        className="max-w-[15em] min-h-[2em] inline-flex items-center justify-center gap-2 px-7 py-3 rounded-sm cursor-pointer bg-[#E61E25] text-white text-lg font-semibold shadow-lg shadow-black/20 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/30"><a href="https://web.facebook.com/aaaoutdooradss" className="text-white">LEARN MORE</a>
+                    </motion.button> 
+                        </Link>
+                    </div>
                     </div>
                     <div id="leftSection" className="hidden lg:flex lg:justify-center lg:items-center">
                         <img
